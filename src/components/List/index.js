@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import API from '../../utils/API';
+import React from 'react';
+
 
 function List(props) {
     const info = (props.sortby === 'lastname') ? 'first' : 'last';
       return (
         <div className='table-responsive'>
             <table className='table'>
-                <thread>
+                <thead>
                     <tr>
                         <th>Name</th>
                         <th>Work Phone</th>
                         <th>Cellphone</th>
                         <th>Email</th>
                     </tr>
-                </thread>
+                </thead>
                 <tbody>
-                    {props.results.sort((a,b) => a.name[info] > b.name[info] ? 1 : -1).map(result => (
+                    {props.results.sort((a, b) => a.name[info] > b.name[info] ? 1 : -1).map(result => (
                         <tr key={result.id.value}>
                             <td><span>{`${result.name.last} ${result.name.first}`}</span></td>
                             <td><span>{result.phone}</span></td>
