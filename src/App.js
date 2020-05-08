@@ -14,10 +14,10 @@ class Container extends Component {
     API.getUsers(query)
       .then(res => this.setState({ results: res.data.results }))
       .catch(err => console.log(err));
-  };
+    };
 
-  componentDidMount() {
-    this.searchEmployees('');
+    componentDidMount() {
+    this.queryEmployees('');
   }
 
   handleInputChange = event => {
@@ -32,19 +32,19 @@ class Container extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.queryEmployees(this.state.search);
+    this.queryEmployees(this.state.getUsers);
   };
 
   render() {
     return (
       <div>
         <Search
-          getUsers={this.state.search}
+          getUsers={this.state.getUsers}
           sortby={this.state.sortby}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
           />
-          <result sortyby={this.state.sortby} results={this.state.results} />
+          <List sortby={this.state.sortby} results={this.state.results} />
       </div>
     );
   }
@@ -56,6 +56,6 @@ function App() {
             <List />
         </Container>;
 
-}
+};
 
 export default App;
