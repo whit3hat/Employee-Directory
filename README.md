@@ -7,3 +7,7 @@
 ## Business Context
 
 An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
+
+## Links
+[Github](https://github.com/whit3hat/Employee-Directory)
+[Application](https://aqueous-spire-95907.herokuapp.com/)
